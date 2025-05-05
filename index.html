@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spacenet.my.id</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #000010, #000022);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      padding: 20px;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    .stars {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: transparent url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/starfield.png') repeat;
+      animation: moveStars 60s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveStars {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-100px, -100px); }
+    }
+
+    .container {
+      max-width: 700px;
+      z-index: 2;
+      animation: fadeIn 1s ease-out;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #00ffff;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 1.5rem;
+    }
+
+    #countdown {
+      font-size: 1.5rem;
+      color: #ffda6a;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background: #00ffff;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+      cursor: pointer;
+      margin: 5px;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #00c6c6;
+    }
+
+    .light-mode {
+      background: #f2f2f2;
+      color: #111;
+    }
+
+    .light-mode h1 {
+      color: #003366;
+    }
+
+    .light-mode p {
+      color: #333;
+    }
+
+    .light-mode #countdown {
+      color: #ff6b00;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="container">
+    <h1>Selamat Datang di Spacenet</h1>
+    <p>Website sedang dalam proses peluncuran. Stay tuned!</p>
+    <div id="countdown"></div>
+    <a href="https://github.com/DHEWAYY" target="_blank" class="btn">Lihat GitHub Gue</a>
+    <div class="btn" onclick="toggleMode()">Toggle Dark/Light Mode</div>
+  </div>
+
+  <script>
+    // Toggle Mode
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+    }
+
+    // Countdown
+    const countdown = document.getElementById("countdown");
+    const launchDate = new Date("2025-06-01T00:00:00").getTime(); // Ganti tanggal launching di sini
+
+    const updateCountdown = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = launchDate - now;
+
+      if (diff < 0) {
+        countdown.innerHTML = "Website telah diluncurkan!";
+        clearInterval(updateCountdown);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `Launching dalam ${days} hari, ${hours} jam, ${minutes} menit, ${seconds} detik`;
+    }, 1000);
+  </script>
+</body>
+</html>
