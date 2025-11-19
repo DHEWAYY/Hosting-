@@ -57,7 +57,7 @@ Lisensi
 Tambahkan file LICENSE sesuai lisensi yang Anda pilih (mis. MIT, Apache-2.0). Jika Anda ingin, saya bisa menambahkan template lisensi.
 
 Kontak
-Untuk pertanyaan atau koordinasi, hubungi: your-email@example.com (ganti dengan alamat email atau contact yang Anda inginkan)
+Untuk pertanyaan atau koordinasi, hubungi: iduyy1198@outlook.co.id
 
 Catatan Tambahan
 - Saya dapat menambahkan badge build/deploy, screenshot demo, template ISSUE/PR, dan file konfigurasi deployment apabila Anda menginginkannya.
