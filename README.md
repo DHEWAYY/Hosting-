@@ -1,4 +1,4 @@
-# Hosting-
+# Hosting
 
 Pendahuluan
 Repositori ini digunakan sebagai hosting pusat untuk semua layanan website dan aplikasi yang saya buat. Tujuannya adalah menjadi wadah untuk menyimpan, mendokumentasikan, dan mendistribusikan proyek—mulai dari front-end hingga endpoint API dan layanan lain yang terkait.
